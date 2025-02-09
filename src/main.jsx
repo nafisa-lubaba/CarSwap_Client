@@ -5,13 +5,13 @@ import {
   // createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { router } from './routes/Route';
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <div>Hello world!</div>,
-//   },
-// ]);
+import App from './App';
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App></App>,
+  },
+]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
