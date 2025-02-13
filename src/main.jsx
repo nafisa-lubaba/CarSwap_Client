@@ -1,11 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Toaster } from 'react-hot-toast';
 import './index.css'
 import {
   // createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import { router } from './routes/Route';
+import AuthProvider from './providers/AuthProvider';
 // const router = createBrowserRouter([
 //   {
 //     path: "/",
@@ -15,6 +17,9 @@ import { router } from './routes/Route';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-     <RouterProvider router={router} />
+    <AuthProvider>
+    <RouterProvider router={router} />
+    <Toaster />
+    </AuthProvider>
   </StrictMode>,
 )
